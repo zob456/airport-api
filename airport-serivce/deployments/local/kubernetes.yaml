@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: airport-service
+  labels:
+    app: airport-service
+spec:
+  selector:
+    matchLabels:
+      app: airport-service
+  template:
+    metadata:
+      labels:
+        app: airport-service
+    spec:
+      containers:
+        - name: airport-service
+          image: airport-service-image
+          env:
+            - name: DB_HOST
+              value: "db"
+            - name: DB_NAME
+              value: "postgres"
+            - name: DB_USER
+              value: "postgres"
+            - name: DB_PASSWORD
+              value: "password"
+            - name: DB_PORT
+              value: "5432"
+          ports:
+            - containerPort: 8080
