@@ -1,0 +1,35 @@
+syntax = "proto3";
+package air;
+
+option go_package = "airport-api/airport-service";
+
+service AirportData {
+  rpc GetAirportDetails (AirportDetailsReq) returns (AirportDetailsRes);
+  rpc GetDistance (AirportDistanceReq) returns (AirportDistanceRes);
+}
+
+message AirportDetailsReq {
+  string AirportID = 1;
+}
+
+message AirportDetailsRes {
+  string AirportID = 1;
+  string AirportName = 2;
+  string City = 3;
+  string Country = 4;
+  string IATACode = 5;
+  string ICAOCode = 6;
+  float Latitude = 7;
+  float Longitude = 8;
+  float Altitude = 9;
+  string TimeZone = 10;
+}
+
+message AirportDistanceReq {
+  string FirstAirportID = 1;
+  string SecondAirportID = 2;
+}
+
+message AirportDistanceRes {
+  float Distance = 1;
+}
