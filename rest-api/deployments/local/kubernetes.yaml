@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rest-api
+  labels:
+    app: rest-api
+spec:
+  selector:
+    matchLabels:
+      app: rest-api
+  template:
+    metadata:
+      labels:
+        app: rest-api
+    spec:
+      containers:
+        - name: rest-api
+          image: rest-api-image
+          env:
+            - name: DB_HOST
+              value: "db"
+            - name: DB_NAME
+              value: "postgres"
+            - name: DB_USER
+              value: "postgres"
+            - name: DB_PASSWORD
+              value: "password"
+            - name: DB_PORT
+              value: "5432"
+            - name: SECRET
+              value: "f00eb8a6-684e-488f-af47-d3a2483ghto8"
+            - name: ENV
+              value: local
+          ports:
+            - containerPort: 8000
