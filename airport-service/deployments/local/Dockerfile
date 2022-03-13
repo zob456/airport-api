@@ -1,24 +1,16 @@
 FROM golang:1.17-alpine
 
-ENV GO_PATH=~/go
-ENV PATH=$PATH:/$GO_PATH/bin
+ENV GO111MODULE=on
 
-RUN apk --update add --no-cache
-RUN apk add --no-cache make protobuf-dev=3.18.1-r1
-
-RUN go get google.golang.org/grpc
-RUN go get -u github.com/golang/protobuf/protoc-gen-go
-
-COPY go.mod src/AirportApi/go.mod
-COPY go.sum src/AirportApi/go.sum
-COPY airport-service src/AirportApi/airport-service
-COPY grpcTypes src/AirportApi/airport-service
+RUN apk update && apk add bash ca-certificates git gcc g++ libc-dev
 
 WORKDIR /go/src/AirportApi/airport-service
 
-RUN protoc --go_out=. --go_opt=paths=source_relative \
-        --go-grpc_out=. --go-grpc_opt=paths=source_relative \
-        air.proto
+COPY go.mod .
+COPY go.sum .
+COPY airport-service src/AirportApi/airport-service
+
+RUN go mod download
 
 RUN CGO_ENABLED=0 GOOS=linux GARCH=amd64 go build -installsuffix cgo -o build/airport-service .
 
