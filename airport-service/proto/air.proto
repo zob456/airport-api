@@ -1,7 +1,7 @@
 syntax = "proto3";
 package air;
 
-option go_package = "github.com/zob456/airport-api/tree/main/airport-service";
+option go_package = "github.com/zob456/airport-api/airport-service;airport-service;";
 
 service AirportData {
   rpc GetAirportDetails (AirportDetailsReq) returns (AirportDetailsRes);
