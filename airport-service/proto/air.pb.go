@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.26.0
 // 	protoc        v3.19.4
-// source: proto/air.proto
+// source: airport-service/proto/air.proto
 
-package airport_service
+package proto
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -31,7 +31,7 @@ type AirportDetailsReq struct {
 func (x *AirportDetailsReq) Reset() {
 	*x = AirportDetailsReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_air_proto_msgTypes[0]
+		mi := &file_airport_service_proto_air_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -44,7 +44,7 @@ func (x *AirportDetailsReq) String() string {
 func (*AirportDetailsReq) ProtoMessage() {}
 
 func (x *AirportDetailsReq) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_air_proto_msgTypes[0]
+	mi := &file_airport_service_proto_air_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -57,7 +57,7 @@ func (x *AirportDetailsReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AirportDetailsReq.ProtoReflect.Descriptor instead.
 func (*AirportDetailsReq) Descriptor() ([]byte, []int) {
-	return file_proto_air_proto_rawDescGZIP(), []int{0}
+	return file_airport_service_proto_air_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *AirportDetailsReq) GetAirportID() string {
@@ -87,7 +87,7 @@ type AirportDetailsRes struct {
 func (x *AirportDetailsRes) Reset() {
 	*x = AirportDetailsRes{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_air_proto_msgTypes[1]
+		mi := &file_airport_service_proto_air_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -100,7 +100,7 @@ func (x *AirportDetailsRes) String() string {
 func (*AirportDetailsRes) ProtoMessage() {}
 
 func (x *AirportDetailsRes) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_air_proto_msgTypes[1]
+	mi := &file_airport_service_proto_air_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -113,7 +113,7 @@ func (x *AirportDetailsRes) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AirportDetailsRes.ProtoReflect.Descriptor instead.
 func (*AirportDetailsRes) Descriptor() ([]byte, []int) {
-	return file_proto_air_proto_rawDescGZIP(), []int{1}
+	return file_airport_service_proto_air_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *AirportDetailsRes) GetAirportID() string {
@@ -198,7 +198,7 @@ type AirportDistanceReq struct {
 func (x *AirportDistanceReq) Reset() {
 	*x = AirportDistanceReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_air_proto_msgTypes[2]
+		mi := &file_airport_service_proto_air_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -211,7 +211,7 @@ func (x *AirportDistanceReq) String() string {
 func (*AirportDistanceReq) ProtoMessage() {}
 
 func (x *AirportDistanceReq) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_air_proto_msgTypes[2]
+	mi := &file_airport_service_proto_air_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -224,7 +224,7 @@ func (x *AirportDistanceReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AirportDistanceReq.ProtoReflect.Descriptor instead.
 func (*AirportDistanceReq) Descriptor() ([]byte, []int) {
-	return file_proto_air_proto_rawDescGZIP(), []int{2}
+	return file_airport_service_proto_air_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *AirportDistanceReq) GetFirstAirportID() string {
@@ -252,7 +252,7 @@ type AirportDistanceRes struct {
 func (x *AirportDistanceRes) Reset() {
 	*x = AirportDistanceRes{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_air_proto_msgTypes[3]
+		mi := &file_airport_service_proto_air_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -265,7 +265,7 @@ func (x *AirportDistanceRes) String() string {
 func (*AirportDistanceRes) ProtoMessage() {}
 
 func (x *AirportDistanceRes) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_air_proto_msgTypes[3]
+	mi := &file_airport_service_proto_air_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -278,7 +278,7 @@ func (x *AirportDistanceRes) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AirportDistanceRes.ProtoReflect.Descriptor instead.
 func (*AirportDistanceRes) Descriptor() ([]byte, []int) {
-	return file_proto_air_proto_rawDescGZIP(), []int{3}
+	return file_airport_service_proto_air_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *AirportDistanceRes) GetDistance() float32 {
@@ -288,10 +288,11 @@ func (x *AirportDistanceRes) GetDistance() float32 {
 	return 0
 }
 
-var File_proto_air_proto protoreflect.FileDescriptor
+var File_airport_service_proto_air_proto protoreflect.FileDescriptor
 
-var file_proto_air_proto_rawDesc = []byte{
-	0x0a, 0x0f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x61, 0x69, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74,
+var file_airport_service_proto_air_proto_rawDesc = []byte{
+	0x0a, 0x1f, 0x61, 0x69, 0x72, 0x70, 0x6f, 0x72, 0x74, 0x2d, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x61, 0x69, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x12, 0x03, 0x61, 0x69, 0x72, 0x22, 0x31, 0x0a, 0x11, 0x41, 0x69, 0x72, 0x70, 0x6f, 0x72,
 	0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x52, 0x65, 0x71, 0x12, 0x1c, 0x0a, 0x09, 0x41,
 	0x69, 0x72, 0x70, 0x6f, 0x72, 0x74, 0x49, 0x44, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09,
@@ -333,33 +334,33 @@ var file_proto_air_proto_rawDesc = []byte{
 	0x74, 0x61, 0x6e, 0x63, 0x65, 0x12, 0x17, 0x2e, 0x61, 0x69, 0x72, 0x2e, 0x41, 0x69, 0x72, 0x70,
 	0x6f, 0x72, 0x74, 0x44, 0x69, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65, 0x52, 0x65, 0x71, 0x1a, 0x17,
 	0x2e, 0x61, 0x69, 0x72, 0x2e, 0x41, 0x69, 0x72, 0x70, 0x6f, 0x72, 0x74, 0x44, 0x69, 0x73, 0x74,
-	0x61, 0x6e, 0x63, 0x65, 0x52, 0x65, 0x73, 0x42, 0x39, 0x5a, 0x37, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x61, 0x6e, 0x63, 0x65, 0x52, 0x65, 0x73, 0x42, 0x3b, 0x5a, 0x39, 0x67, 0x69, 0x74, 0x68, 0x75,
 	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x7a, 0x6f, 0x62, 0x34, 0x35, 0x36, 0x2f, 0x61, 0x69, 0x72,
-	0x70, 0x6f, 0x72, 0x74, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x74, 0x72, 0x65, 0x65, 0x2f, 0x6d, 0x61,
-	0x69, 0x6e, 0x2f, 0x61, 0x69, 0x72, 0x70, 0x6f, 0x72, 0x74, 0x2d, 0x73, 0x65, 0x72, 0x76, 0x69,
-	0x63, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x70, 0x6f, 0x72, 0x74, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x69, 0x72, 0x70, 0x6f, 0x72, 0x74,
+	0x2d, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x3b, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_proto_air_proto_rawDescOnce sync.Once
-	file_proto_air_proto_rawDescData = file_proto_air_proto_rawDesc
+	file_airport_service_proto_air_proto_rawDescOnce sync.Once
+	file_airport_service_proto_air_proto_rawDescData = file_airport_service_proto_air_proto_rawDesc
 )
 
-func file_proto_air_proto_rawDescGZIP() []byte {
-	file_proto_air_proto_rawDescOnce.Do(func() {
-		file_proto_air_proto_rawDescData = protoimpl.X.CompressGZIP(file_proto_air_proto_rawDescData)
+func file_airport_service_proto_air_proto_rawDescGZIP() []byte {
+	file_airport_service_proto_air_proto_rawDescOnce.Do(func() {
+		file_airport_service_proto_air_proto_rawDescData = protoimpl.X.CompressGZIP(file_airport_service_proto_air_proto_rawDescData)
 	})
-	return file_proto_air_proto_rawDescData
+	return file_airport_service_proto_air_proto_rawDescData
 }
 
-var file_proto_air_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
-var file_proto_air_proto_goTypes = []interface{}{
+var file_airport_service_proto_air_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_airport_service_proto_air_proto_goTypes = []interface{}{
 	(*AirportDetailsReq)(nil),  // 0: air.AirportDetailsReq
 	(*AirportDetailsRes)(nil),  // 1: air.AirportDetailsRes
 	(*AirportDistanceReq)(nil), // 2: air.AirportDistanceReq
 	(*AirportDistanceRes)(nil), // 3: air.AirportDistanceRes
 }
-var file_proto_air_proto_depIdxs = []int32{
+var file_airport_service_proto_air_proto_depIdxs = []int32{
 	0, // 0: air.AirportData.GetAirportDetails:input_type -> air.AirportDetailsReq
 	2, // 1: air.AirportData.GetDistance:input_type -> air.AirportDistanceReq
 	1, // 2: air.AirportData.GetAirportDetails:output_type -> air.AirportDetailsRes
@@ -371,13 +372,13 @@ var file_proto_air_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_proto_air_proto_init() }
-func file_proto_air_proto_init() {
-	if File_proto_air_proto != nil {
+func init() { file_airport_service_proto_air_proto_init() }
+func file_airport_service_proto_air_proto_init() {
+	if File_airport_service_proto_air_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_proto_air_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_airport_service_proto_air_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AirportDetailsReq); i {
 			case 0:
 				return &v.state
@@ -389,7 +390,7 @@ func file_proto_air_proto_init() {
 				return nil
 			}
 		}
-		file_proto_air_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_airport_service_proto_air_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AirportDetailsRes); i {
 			case 0:
 				return &v.state
@@ -401,7 +402,7 @@ func file_proto_air_proto_init() {
 				return nil
 			}
 		}
-		file_proto_air_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_airport_service_proto_air_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AirportDistanceReq); i {
 			case 0:
 				return &v.state
@@ -413,7 +414,7 @@ func file_proto_air_proto_init() {
 				return nil
 			}
 		}
-		file_proto_air_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_airport_service_proto_air_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AirportDistanceRes); i {
 			case 0:
 				return &v.state
@@ -430,18 +431,18 @@ func file_proto_air_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_proto_air_proto_rawDesc,
+			RawDescriptor: file_airport_service_proto_air_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_proto_air_proto_goTypes,
-		DependencyIndexes: file_proto_air_proto_depIdxs,
-		MessageInfos:      file_proto_air_proto_msgTypes,
+		GoTypes:           file_airport_service_proto_air_proto_goTypes,
+		DependencyIndexes: file_airport_service_proto_air_proto_depIdxs,
+		MessageInfos:      file_airport_service_proto_air_proto_msgTypes,
 	}.Build()
-	File_proto_air_proto = out.File
-	file_proto_air_proto_rawDesc = nil
-	file_proto_air_proto_goTypes = nil
-	file_proto_air_proto_depIdxs = nil
+	File_airport_service_proto_air_proto = out.File
+	file_airport_service_proto_air_proto_rawDesc = nil
+	file_airport_service_proto_air_proto_goTypes = nil
+	file_airport_service_proto_air_proto_depIdxs = nil
 }
