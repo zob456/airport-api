@@ -39,7 +39,6 @@ func SelectAirportDetails(db *sql.DB, airportID string) (*pb.AirportDetailsRes, 
 		&airportDetails.Latitude,
 		&airportDetails.Longitude,
 		&airportDetails.Altitude,
-		&airportDetails.Altitude,
 		&airportDetails.TimeZone,
 	)
 	if err != nil {

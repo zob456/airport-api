@@ -1,9 +1,11 @@
 package main
 
 import (
+	pb "AirportApi/airport-service/proto"
 	"AirportApi/rest-api/handlers"
 	"AirportApi/rest-api/middleware"
 	"AirportApi/rest-api/utils"
+	"context"
 	"github.com/gin-gonic/gin"
 	_ "github.com/lib/pq"
 	"google.golang.org/grpc"
@@ -13,10 +15,13 @@ import (
 )
 
 func main() {
-	conn, err := grpc.Dial(":9000", grpc.WithTransportCredentials(insecure.NewCredentials()))
+	conn, err := grpc.Dial("airport-service:9000", grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 		log.Fatal(err)
 	}
+	defer conn.Close()
+
+	client := pb.NewAirportDataClient(conn)
 
 	airCtx := &utils.AirContext{}
 	db := utils.ConnectDB()
@@ -37,7 +42,7 @@ func main() {
 	// gRPC Handlers
 	grpcGroup := router.Group("/grpc")
 	{
-		grpcGroup.POST("/details", handlers.GetAirportDetails(conn))
+		grpcGroup.POST("/details", handlers.GetAirportDetails(client, context.Background()))
 		grpcGroup.POST("/distance", handlers.GetAirportDistance(conn))
 	}
 

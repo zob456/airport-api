@@ -11,7 +11,7 @@ import (
 	"time"
 )
 
-func GetAirportDetails(conn *grpc.ClientConn) gin.HandlerFunc {
+func GetAirportDetails(client pb.AirportDataClient, standardCtx context.Context) gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		var req models.AirportDetailsReq
 		err := ctx.ShouldBind(&req)
@@ -22,14 +22,9 @@ func GetAirportDetails(conn *grpc.ClientConn) gin.HandlerFunc {
 
 		grpcReq := &pb.AirportDetailsReq{AirportID: req.AirportID}
 
-		standardCtx, cancel := context.WithTimeout(context.Background(), time.Second)
-		defer cancel()
-
-		c := pb.NewAirportDataClient(conn)
-
-		res, err := c.GetAirportDetails(standardCtx, grpcReq)
+		res, err := client.GetAirportDetails(standardCtx, grpcReq)
 		if err != nil {
-			utils.AirHttpErrorHandler(ctx, err, http.StatusBadRequest)
+			utils.AirHttpErrorHandler(ctx, err, http.StatusInternalServerError)
 			return
 		}
 
