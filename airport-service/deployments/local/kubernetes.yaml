@@ -28,4 +28,4 @@ spec:
             - name: DB_PORT
               value: "5432"
           ports:
-            - containerPort: 8080
+            - containerPort: 9000
