@@ -15,5 +15,5 @@ k8s_yaml([
 ])
 
 k8s_resource(workload='airdb', port_forwards=5432)
-k8s_resource(workload='rest-api', resource_deps=['airdb'], port_forwards=8000)
 k8s_resource(workload='airport-service', resource_deps=['airdb'], port_forwards=9000)
+k8s_resource(workload='rest-api', resource_deps=['airdb', 'airport-service'], port_forwards=8000)

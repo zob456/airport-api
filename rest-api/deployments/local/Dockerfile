@@ -5,6 +5,7 @@ ENV GO111MODULE=on
 COPY go.mod src/AirportApi/go.mod
 COPY go.sum src/AirportApi/go.sum
 COPY rest-api src/AirportApi/rest-api
+COPY airport-service/proto src/AirportApi/airport-service/proto
 
 WORKDIR /go/src/AirportApi/rest-api
 

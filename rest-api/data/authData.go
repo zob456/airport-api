@@ -6,13 +6,13 @@ import (
 )
 
 func SelectAuthedUser(db *sql.DB, email string, password string) (*models.AuthedUser, error) {
+	authedUser := &models.AuthedUser{}
 	/*language=PostgreSQL*/
 	const query = `SELECT
        "UserID",
        "UserName"
 	FROM "UserData"."vw_User" WHERE "UserName" = $1 AND "Password" = $2 AND "Active" = true LIMIT 1;`
 
-	authedUser := &models.AuthedUser{}
 	stmt, err := db.Prepare(query)
 	if err != nil {
 		return nil, err

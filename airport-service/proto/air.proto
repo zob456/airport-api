@@ -19,9 +19,9 @@ message AirportDetailsRes {
   string Country = 4;
   string IATACode = 5;
   string ICAOCode = 6;
-  float Latitude = 7;
-  float Longitude = 8;
-  float Altitude = 9;
+  double Latitude = 7;
+  double Longitude = 8;
+  double Altitude = 9;
   string TimeZone = 10;
 }
 
@@ -31,5 +31,5 @@ message AirportDistanceReq {
 }
 
 message AirportDistanceRes {
-  float Distance = 1;
+  double Distance = 1;
 }

@@ -18,7 +18,7 @@ spec:
           image: airport-service-image
           env:
             - name: DB_HOST
-              value: "db"
+              value: "airdb"
             - name: DB_NAME
               value: "postgres"
             - name: DB_USER
