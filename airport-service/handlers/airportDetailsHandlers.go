@@ -5,6 +5,10 @@ import (
 	"context"
 )
 
-func (s *pb.AirportDataServer) SayHello(ctx context.Context, in *pb.AirportDetailsReq) (*pb.AirportDetailsRes, error) {
+type Server struct {
+	pb.UnimplementedAirportDataServer
+}
+
+func (s *Server) GetAirportDetails(ctx context.Context, in *pb.AirportDetailsReq) (*pb.AirportDetailsRes, error) {
 	return &pb.AirportDetailsRes{}, nil
 }
