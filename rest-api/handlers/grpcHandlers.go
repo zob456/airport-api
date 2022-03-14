@@ -6,9 +6,7 @@ import (
 	"AirportApi/rest-api/utils"
 	"context"
 	"github.com/gin-gonic/gin"
-	"google.golang.org/grpc"
 	"net/http"
-	"time"
 )
 
 func GetAirportDetails(client pb.AirportDataClient, standardCtx context.Context) gin.HandlerFunc {
@@ -32,23 +30,21 @@ func GetAirportDetails(client pb.AirportDataClient, standardCtx context.Context)
 	}
 }
 
-func GetAirportDistance(conn *grpc.ClientConn) gin.HandlerFunc {
+func GetAirportDistance(client pb.AirportDataClient, standardCtx context.Context) gin.HandlerFunc {
 	return func(ctx *gin.Context) {
-		var req *pb.AirportDistanceReq
+		var req *models.AirportDistanceReq
 		err := ctx.ShouldBind(&req)
 		if err != nil {
 			utils.AirHttpErrorHandler(ctx, err, http.StatusBadRequest)
 			return
 		}
 
-		standardCtx, cancel := context.WithTimeout(context.Background(), time.Second)
-		defer cancel()
+		grpcReq := &pb.AirportDistanceReq{FirstAirportID: req.FirstAirportID, SecondAirportID: req.SecondAirportID}
 
-		c := pb.NewAirportDataClient(conn)
+		res, err := client.GetDistance(standardCtx, grpcReq)
 
-		res, err := c.GetDistance(standardCtx, req)
 		if err != nil {
-			utils.AirHttpErrorHandler(ctx, err, http.StatusBadRequest)
+			utils.AirHttpErrorHandler(ctx, err, http.StatusInternalServerError)
 			return
 		}
 

@@ -43,7 +43,7 @@ func main() {
 	grpcGroup := router.Group("/grpc")
 	{
 		grpcGroup.POST("/details", handlers.GetAirportDetails(client, context.Background()))
-		grpcGroup.POST("/distance", handlers.GetAirportDistance(conn))
+		grpcGroup.POST("/distance", handlers.GetAirportDistance(client, context.Background()))
 	}
 
 	log.Fatal(router.Run(":8000"))

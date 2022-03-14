@@ -8,3 +8,8 @@ type LoginReq struct {
 type AirportDetailsReq struct {
 	AirportID string
 }
+
+type AirportDistanceReq struct {
+	FirstAirportID string
+	SecondAirportID string
+}

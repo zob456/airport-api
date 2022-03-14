@@ -30,7 +30,6 @@ func ValidateToken(db *sql.DB, airCtx *utils.AirContext) gin.HandlerFunc {
 		authToken := strings.TrimSpace(ctx.Request.Header.Get("Authorization"))
 		token := strings.TrimPrefix(authToken, "Bearer ")
 		if token == "null" {
-			fmt.Println("called token null")
 			ctx.AbortWithStatusJSON(http.StatusUnauthorized, "not signed in")
 			return
 		}
@@ -42,7 +41,6 @@ func ValidateToken(db *sql.DB, airCtx *utils.AirContext) gin.HandlerFunc {
 		}
 		err := SelectAuthedUserLoggedInStatus(db, token)
 		if err != nil {
-			fmt.Println("called signedIn status")
 			ctx.AbortWithStatusJSON(http.StatusUnauthorized, "not signed in")
 			return
 		}
@@ -86,7 +84,6 @@ func SelectAuthedUserLoggedInStatus(db *sql.DB, jwt string) error {
 		LIMIT 1;`
 
 	var userID *string
-	fmt.Println(jwt)
 	stmt, err := db.Prepare(query)
 	if err != nil {
 		return err

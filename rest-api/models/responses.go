@@ -8,9 +8,4 @@ type AuthedUser struct {
 	JWT      string
 }
 
-// Airport Service
-
-type AirportDetailsRes struct {
-	Distance float64
-}
 
